@@ -38,6 +38,11 @@ class Fraction:
         return f"{self.__numerator}/{self.__denominator}"
 
     def __add__(self, other: Fraction) -> Fraction:
+        """
+        Sobrecarga del operador "+".
+        :param other: Fraction.
+        :return: Fraction
+        """
         mcm = Fraction.__mcm(self.denominator, other.denominator)
         dif_self = int(mcm / self.denominator)
         dif_other = int(mcm / other.denominator)
@@ -45,6 +50,11 @@ class Fraction:
         return Fraction(numerator_result, mcm)
 
     def __sub__(self, other: Fraction) -> Fraction:
+        """
+        Sobrecarga del operador "-".
+        :param other: Fraction.
+        :return: Fraction
+        """
         mcm = Fraction.__mcm(self.denominator, other.denominator)
         dif_self = int(mcm / self.denominator)
         dif_other = int(mcm / other.denominator)
@@ -52,6 +62,11 @@ class Fraction:
         return Fraction(numerator_result, mcm)
 
     def __mul__(self, other: Fraction) -> Fraction:
+        """
+        Sobrecargar del operador "*".
+        :param other: Fraction.
+        :return: Fraction.
+        """
         return Fraction(
             self.__numerator * other.numerator,
             self.__denominator * other.denominator
