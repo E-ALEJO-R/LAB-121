@@ -19,7 +19,7 @@ class Fraction:
         self.__denominator = denominator
 
     @property
-    def numerator(self):
+    def numerator(self) -> int:
         return self.__numerator
 
     @numerator.setter
@@ -27,14 +27,14 @@ class Fraction:
         self.__numerator = value
 
     @property
-    def denominator(self):
+    def denominator(self) -> int:
         return self.__denominator
 
     @denominator.setter
     def denominator(self, value: int):
         self.__denominator = value
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.__numerator}/{self.__denominator}"
 
     def __add__(self, other: Fraction) -> Fraction:
@@ -44,21 +44,21 @@ class Fraction:
         numerator_result = (dif_self * self.numerator) + (dif_other * other.numerator)
         return Fraction(numerator_result, mcm)
 
-    def __sub__(self, other: Fraction):
+    def __sub__(self, other: Fraction) -> Fraction:
         mcm = Fraction.__mcm(self.denominator, other.denominator)
         dif_self = int(mcm / self.denominator)
         dif_other = int(mcm / other.denominator)
         numerator_result = (dif_self * self.numerator) - (dif_other * other.numerator)
         return Fraction(numerator_result, mcm)
 
-    def __mul__(self, other: Fraction):
+    def __mul__(self, other: Fraction) -> Fraction:
         return Fraction(
             self.__numerator * other.numerator,
             self.__denominator * other.denominator
         )
 
     @staticmethod
-    def __mcd(a, b):
+    def __mcd(a, b) -> int:
         while b != 0:
             tmp = b
             b = a % b
@@ -66,7 +66,7 @@ class Fraction:
         return int(a)
 
     @staticmethod
-    def __mcm(a, b):
+    def __mcm(a, b) -> int:
         return int((a * b) / Fraction.__mcd(a, b))
 
 
