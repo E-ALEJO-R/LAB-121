@@ -74,6 +74,12 @@ class Fraction:
 
     @staticmethod
     def __mcd(a, b) -> int:
+        """
+        Método para halla el máximo común divisor.
+        :param a:
+        :param b:
+        :return:
+        """
         while b != 0:
             tmp = b
             b = a % b
@@ -82,6 +88,12 @@ class Fraction:
 
     @staticmethod
     def __mcm(a, b) -> int:
+        """
+        Método para hallar el mínimo común múltiplo.
+        :param a:
+        :param b:
+        :return:
+        """
         return int((a * b) / Fraction.__mcd(a, b))
 
 
