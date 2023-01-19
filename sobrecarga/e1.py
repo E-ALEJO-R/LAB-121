@@ -74,7 +74,7 @@ if __name__ == '__main__':
     f1 = Fraction(4, 7)
     f2 = Fraction(2, 3)
 
-    print(f"fracción1 = {f1}, fracción2 = {f2}")
+    print(f"F1 = {f1}, F2 = {f2}")
 
     print("suma:", f1 + f2)
     print("resta:", f1 - f2)
